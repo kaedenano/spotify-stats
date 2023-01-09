@@ -9,7 +9,10 @@ const handleLogin = () => {
 export const welcome = () => {
 
     return (
-        <Box textAlign='center' minHeight="70vh">
+        <Box
+            textAlign='center'
+            marginTop={{base: "100px", sm: "50px"}}
+            >
             <Heading as='h1' size='4xl'>
                 Share Statistics
             </Heading>

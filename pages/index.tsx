@@ -1,6 +1,6 @@
 import { signIn } from 'next-auth/react'
 import Navbar from '../components/exnavbar';
-import Layout from '../components/welcome';
+import Landing from '../components/landing';
 import Footer from '../components/footer';
 
 const handleLogin = () => {
@@ -12,7 +12,7 @@ export const welcome = () => {
     return (
         <>
             <Navbar/>
-            <Layout />
+            <Landing />
         </>
     )
 }
