@@ -8,19 +8,23 @@ const handleLogin = () => {
 
 export const welcome = () => {
 
-        return (
-        <Container>
-            <Box textAlign='center'>
-                <Heading as='h1' size='4xl'>
-                    Share Statistics
-                </Heading>
-                <Heading as='h1' size='4xl'>
-                    with Other Users
-                </Heading>
-                <Button onClick={handleLogin} shadow='md' padding='7' margin='5'background='brand.100' rounded='full' color='white'>Login on Spotify</Button>
-            </Box>
-            <Text as='i' fontStyle='bold'>Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.</Text>
-        </Container>
+    return (
+        <Box textAlign='center' minHeight="70vh">
+            <Heading as='h1' size='4xl'>
+                Share Statistics
+            </Heading>
+            <Heading as='h1' size='4xl'>
+                with Other Users
+            </Heading>
+            <Button onClick={handleLogin} shadow='md' padding='7' margin='5' background='brand.100' rounded='full' color='white'>
+                Login on Spotify
+            </Button>
+            <p>
+                <Text as='i'>
+                    Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.
+                </Text>
+            </p>
+        </Box>
     )
 
 }

@@ -1,5 +1,5 @@
 import { signIn } from 'next-auth/react'
-import Header from '../components/header';
+import Navbar from '../components/navbar';
 import Layout from '../components/welcome';
 import Footer from '../components/footer';
 
@@ -11,7 +11,8 @@ export const welcome = () => {
 
     return (
         <>
-        <Layout/>
+            <Navbar/>
+            <Layout />
         </>
     )
 }
