@@ -1,5 +1,5 @@
 import { signIn } from 'next-auth/react'
-import Navbar from '../components/navbar';
+import Navbar from '../components/exnavbar';
 import Layout from '../components/welcome';
 import Footer from '../components/footer';
 
