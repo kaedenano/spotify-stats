@@ -1,4 +1,6 @@
 import { signIn } from 'next-auth/react'
+import { Heading, Box, Button, Text, VStack, Flex, Container } from '@chakra-ui/react';
+import { Center } from '@chakra-ui/layout';
 
 const handleLogin = () => {
     signIn("spotify", { callbackUrl: "http://localhost:3000/stats" });
@@ -6,16 +8,21 @@ const handleLogin = () => {
 
 export const welcome = () => {
 
-    return (
-        <>
-            <div className="h-screen w-screen flex flex-col justify-center items-center">
-                <h1 className="font-bold text-9xl text-white">Share Statistics</h1>
-                <h1 className="font-bold text-9xl text-white">with Other Users</h1>
-                <button className="text-4xl text-white w-96 h-32 rounded-full bg-green-500 m-20" onClick={handleLogin}>Login on Spotify</button>
-                <p className="text-gray-500">Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.</p>
-            </div>
-        </>
+        return (
+        <Container>
+            <Box textAlign='center'>
+                <Heading as='h1' size='4xl'>
+                    Share Statistics
+                </Heading>
+                <Heading as='h1' size='4xl'>
+                    with Other Users
+                </Heading>
+                <Button onClick={handleLogin} shadow='md' padding='7' margin='5'background='brand.100' rounded='full' color='white'>Login on Spotify</Button>
+            </Box>
+            <Text as='i' fontStyle='bold'>Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.</Text>
+        </Container>
     )
+
 }
 
 export default welcome;

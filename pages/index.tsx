@@ -11,9 +11,7 @@ export const welcome = () => {
 
     return (
         <>
-        <Header/>
         <Layout/>
-        <Footer/>
         </>
     )
 }
