@@ -61,6 +61,9 @@ const Component: React.FC<Props> = ({ images }) => {
       >
         <AnimatePresence onExitComplete={() => console.log('aaa')}>
           <motion.div
+
+
+
             // アニメーションの変化終了時点の最終移動差分
             animate={{
               x: itemWidthWithGap,

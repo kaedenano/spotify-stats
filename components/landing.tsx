@@ -1,8 +1,9 @@
 import { signIn } from 'next-auth/react'
-import { Heading, Box, Button, Text, VStack, Flex, Container } from '@chakra-ui/react';
+import { Heading, Box, Button, Text, VStack, Flex, Container, Image } from '@chakra-ui/react';
 import { Center, HStack } from '@chakra-ui/layout';
 import { motion } from "framer-motion";
 import { ScrollImages } from './scrollImages';
+import { LoginButton } from './loginButton';
 
 const handleLogin = () => {
     signIn("spotify", { callbackUrl: "http://localhost:3000/stats" });
@@ -32,8 +33,12 @@ export const welcome = () => {
                     color='white'>
                     Login on Spotify
                 </Button>
+                {/* <LoginButton/> */}
                 <p>
-                    <Text as='i'>
+                    <Text
+                        as='i'
+                        color={'gray.400'}
+                        mx='10'>
                         Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.
                     </Text>
                 </p>
@@ -41,44 +46,39 @@ export const welcome = () => {
 
             <Box
                 marginTop={32}
+            // mx='100px'
             >
-                <ScrollImages
-                    images={[
-                        <img src='images/1.jfif' />, 
-                        <img src='images/2.jfif' />, 
-                        <img src='images/3.jfif' />, 
-                        <img src='images/4.jfif' />, 
-                        <img src='images/5.jfif' />, 
-                        <img src='images/6.jfif' />, 
-                        <img src='images/7.jfif' />, 
-                    ]} />
+                <motion.div
+                    whileHover={{
+                        scale: 1,
+                    }}
+                >
+                    <ScrollImages
+                        images={[
+                            <Image rounded='2xl' shadow='2xl' src='images/1.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/2.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/3.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/4.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/5.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/6.jfif' />,
+                            <Image rounded='2xl' shadow='2xl' src='images/7.jfif' />,
+                        ]} />
+                </motion.div>
             </Box>
-
-
-
-
-
-            {/* <Box marginTop={'150'}
-                textAlign={'center'}
+            <Box
+                textAlign='center'
+                mx='500px'
+                marginTop={32}
             >
-                <Flex justifyContent={'center'} alignContent={'center'}>
-                    <motion.div
-                        animate={{
-                            x: [0, 100, 50]
-                        }}>
-                        <HStack spacing={10}>
-
-                            <img src='images/1.jfif' />
-                            <img src='images/2.jfif' />
-                            <img src='images/4.jfif' />
-                            <img src='images/5.jfif' />
-                            <img src='images/6.jfif' />
-                            <img src='images/7.jfif' />
-                        </HStack>
-                    </motion.div>
-                </Flex>
-            </Box> */}
-
+                <p>
+                    <Text
+                        as='i'
+                        color={'gray.400'}
+                        mx='10'>
+                        Get stLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.atistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.
+                    </Text>
+                </p>
+            </Box>
         </>
 
 

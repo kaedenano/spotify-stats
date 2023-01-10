@@ -249,7 +249,7 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: 'Inspiration',
+    label: 'Spotify Stats',
     children: [
       {
         label: 'Explore Design Work',
