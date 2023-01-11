@@ -77,6 +77,7 @@ export default function WithSubnavigation() {
           </Button>
           <Button
             display={{ base: 'none', md: 'inline-flex' }}
+            rounded='full'
             fontSize={'sm'}
             fontWeight={600}
             color={'white'}
