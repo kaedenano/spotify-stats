@@ -67,14 +67,14 @@ export const welcome = () => {
             </Box>
             <Box
                 textAlign='center'
-                mx='500px'
-                marginTop={32}
+                mx={{lg:'500px', sm: '50px'}}
+                my={32}
             >
                 <p>
                     <Text
                         as='i'
                         color={'gray.400'}
-                        mx='10'>
+                        >
                         Get stLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.atistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.
                     </Text>
                 </p>
