@@ -11,7 +11,7 @@ const handleLogin = () => {
 export const welcome = () => {
 
     useEffect(() => {
-        fetch('/api')
+        fetch('/api/upsert')
             .then((res) => res.json())
             .then(console.log);
     }, []);

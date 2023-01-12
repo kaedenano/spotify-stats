@@ -9,8 +9,6 @@ type tracks = {
   items: Track[];
 }
 
-
-
 export const getFeatures = async (tracks: tracks, session: Session) => {
 
     let features = [];
