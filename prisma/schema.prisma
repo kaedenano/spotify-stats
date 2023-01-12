@@ -35,8 +35,8 @@ datasource db {
 model User {
   id     Int     @id @default(autoincrement())
   uuid   String  @unique
-  spId   String  @unique
-  Artist String? @default("[]")
-  Track  String? @default("[]")
-  Genre  String? @default("[]")
+  spid   String  @unique
+  artist String? @default("[]")
+  track  String? @default("[]")
+  genre  String? @default("[]")
 }

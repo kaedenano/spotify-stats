@@ -11,28 +11,30 @@ export default async function handler(
 ) {
 
   const uuid = uuidv4();
-  const spid = 'n';
+  const spid = 'kaede';
   const topTracks = 'aaa';
   const topArtists = 'aaa';
   const topGenres = 'aaa';
 
   const users = await prisma.user.upsert({
     where: {
-      spId: spid
+      spid: spid
     },
     update: {
       uuid: uuid,
-      Artist: topArtists,
-      Track: topTracks,
-      Genre: topGenres,
+      artist: topArtists,
+      track: topTracks,
+      genre: topGenres,
     },
     create: {
-      spId: spid,
+      spid: spid,
       uuid: uuid,
-      Artist: topArtists,
-      Track: topTracks,
-      Genre: topGenres,
+      artist: topArtists,
+      track: topTracks,
+      genre: topGenres,
     }
   });
+
   res.status(200).json(users);
+
 }
