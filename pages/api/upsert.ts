@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 import type { User } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid'
-
 const prisma = new PrismaClient();
 
 export default async function handler(
@@ -10,11 +9,13 @@ export default async function handler(
   res: NextApiResponse<User[]>,
 ) {
 
+  console.log(req.body[0].spotifyid)
+
   const uuid = uuidv4();
-  const spid = req.body;
-  const topTracks = 'aaa';
-  const topArtists = 'aaa';
-  const topGenres = 'aaa';
+  const spid = req.body[0].spotifyid;
+  const topArtists = req.body[1].spotifyartists;
+  const topTracks = req.body[2].spotifytracks;
+  const topGenres = req.body[3].spotifygenres;
 
   const users = await prisma.user.upsert({
     where: {

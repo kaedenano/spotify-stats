@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { useState } from 'react';
+import qs from 'qs'
 
 import { getFeatures } from '../tools/getFeatures';
 import { getApiData } from '../tools/getApiData';
@@ -18,40 +19,38 @@ export const view = ({ user, tracks, artists }: any) => {
 
     // const key = transKey(mode(features));
     // const tempo = bpm(features);
-    const genreRank = sortGenre(artists.items);
-    const create = 1;
 
-    console.log(user);
-    const uid = JSON.stringify(user.id);
-    console.log(uid);
 
+    const uid = user.id;
+    const artist = artists.items;
+    const track = tracks.items;
+    const genre = sortGenre(artists.items);
+
+    // console.log(user);
+    // console.log(uid);
     // console.log(features);
     // console.log(key);
     // console.log(tempo);
-    // console.log(artists);
-    // console.log(genreRank);
-    // console.log(artists.items[0].images[0].url);
-    // console.log(tracks);
+    console.log(artists.items);
+    console.log(tracks.items);
+
+    const data = formatData(uid, artist, track, genre);
+    console.log(data)
 
     // const [data, setData] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
 
-    const handleClick = async (uid) => {
-        await axios.post('http://localhost:3000/api/upsert', uid );
-        // setData(uid);
-        // setIsLoaded(true);
-    }
-
-
-
-
-
+    // const handleClick = async (uid) => {
+    //     await axios.post('http://localhost:3000/api/upsert', uid);
+    //     // setData(uid);
+    //     // setIsLoaded(true);
+    // }
 
 
     return (
         <>
             <Button
-                onClick={handleClick}
+                onClick={throwDB(data)}
                 background={'gray.500'}
             >POST</Button>
             <img src={artists.items[0].images[0].url}></img>
@@ -78,14 +77,32 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 }
 
-// const throwDB: GetServerSideProps = async (data) => {
-//     await axios.post('http://localhost:3000/api/upsert', { data });
-//     console.log(data);
-//     return {
-//         props: {
-//             data,
-//         },
-//     };
-// }
+const throwDB: GetServerSideProps = async (data) => {
+
+    const axiosInstance = axios.create({
+        headers: { 'Content-Type': 'application/json' }
+    });
+
+    axiosInstance.post('http://localhost:3000/api/upsert', data)
+        .then(response => {
+            console.log(response.data);
+        })
+        .catch(error => {
+            console.log(error);
+        });
+}
+
+const formatData = (spid, artists, tracks, genres) => {
+
+    let data = [
+        { spotifyid: spid },
+        { spotifyartists: artists },
+        { spotifytracks: tracks },
+        { spotifygenres: genres },
+    ]
+
+    return data;
+
+}
 
 export default view;
