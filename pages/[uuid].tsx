@@ -3,15 +3,14 @@ import React from 'react';
 import { useRouter } from 'next/router';
 import axios from 'axios';
 
-export const view = ({ currentUrl }) => {
+export const view = ({ data }) => {
 
-    const uuid = currentUrl;
-    // console.log(uuid)
+    console.log(data);
 
     return (
         <>
 
-            <h1 color='white'>{uuid}</h1>
+            <h1 color='white'>aaa</h1>
 
         </>
     )
@@ -23,20 +22,22 @@ export async function getServerSideProps(ctx) {
     const currentUrl = ctx.params.uuid;
 
     const axiosInstance = axios.create({
-        headers: { 'Content-Type':  'text/plain' }
+        headers: { 'Content-Type': 'text/plain' }
     });
 
-    axiosInstance.post('http://localhost:3000/api/select', currentUrl)
+    const data = await axiosInstance.post('http://localhost:3000/api/select', currentUrl)
         .then(response => {
-            console.log('running DB SELECT');
+
             console.log(response.data);
+            return response.data;
         })
         .catch(error => {
             console.log(error);
         });
 
+    return { props: { data } };
 
-    return { props: { currentUrl } };
+
 }
 
 

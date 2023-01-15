@@ -2,6 +2,7 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import { PrismaClient } from '@prisma/client';
 import type { User } from '@prisma/client';
 import { v4 as uuidv4 } from 'uuid'
+
 const prisma = new PrismaClient();
 
 export default async function handler(
@@ -20,10 +21,14 @@ export default async function handler(
     if (!users) {
       res.status(200).send("Data not found");
     } else {
-      res.status(200).json('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!');
+      res.status(200).json(users);
     }
   } catch (error) {
     res.status(500).send(error.message);
   }
+
+
+
+
 
 }
