@@ -5,7 +5,7 @@ import Head from 'next/head'
 import {theme} from '../styles/theme'
 // import '../styles/globals.css'
 
-function App({ Component, pageProps: { session, ...pageProps } }) {
+function App({ Component, pageProps: { session, ...pageProps } }: any){
   return (
     <>
       <ChakraProvider theme={theme}>

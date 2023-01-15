@@ -1,4 +1,4 @@
-export default function stats(props) {
+export default function stats() {
     return (
         <>
             {/* <img src={props.} */}

@@ -4,7 +4,7 @@ import axios from 'axios';
 import Navbar from '../components/exnavbar';
 import { Container, Box, Grid, GridItem, SimpleGrid, Text, Image } from '@chakra-ui/react'
 
-export const view = ({ data }) => {
+export const view = ({ data }: any) => {
 
     console.log(data);
 
@@ -17,7 +17,7 @@ export const view = ({ data }) => {
                 // bg='blue.600'
                 maxW='1000px'>
                 <Text
-                    as='italic'
+                    as='i'
                     fontSize={'96'}
                     color='white' >
                     Top Artists
@@ -44,7 +44,7 @@ export const view = ({ data }) => {
 
 }
 
-export async function getServerSideProps(ctx) {
+export async function getServerSideProps(ctx: any) {
 
     const currentUrl = ctx.params.uuid;
 

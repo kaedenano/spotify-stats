@@ -3,7 +3,7 @@ import { Heading, Box, Button, Text, VStack, Flex, Container, Image } from '@cha
 import { Center, HStack } from '@chakra-ui/layout';
 import { motion } from "framer-motion";
 import { ScrollImages } from './scrollImages';
-import { LoginButton } from './loginButton';
+// import { LoginButton } from './loginButton';
 
 const handleLogin = () => {
     signIn("spotify", { callbackUrl: "http://localhost:3000/stats" });
@@ -55,13 +55,13 @@ export const welcome = () => {
                 >
                     <ScrollImages
                         images={[
-                            <Image rounded='2xl' shadow='2xl' src='images/1.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/2.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/3.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/4.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/5.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/6.jfif' />,
-                            <Image rounded='2xl' shadow='2xl' src='images/7.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/1.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/2.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/3.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/4.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/5.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/6.jfif' />,
+                            <Image key={1} rounded='2xl' shadow='2xl' src='images/7.jfif' />,
                         ]} />
                 </motion.div>
             </Box>

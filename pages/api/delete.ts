@@ -10,7 +10,7 @@ export default async function handler(
 ) {
 
   const spid = req.body;
-  const users = await prisma.user.delete({
+  const users: any = await prisma.user.delete({
     where: {
       spid: spid
     }

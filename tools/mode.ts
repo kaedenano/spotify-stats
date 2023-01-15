@@ -1,4 +1,4 @@
-export const mode = (features) => {
+export const mode = (features: any) => {
 
     let arr = [];
 
@@ -10,9 +10,9 @@ export const mode = (features) => {
         return null
     }
     //回数を記録する連想配列
-    let counter = {}
+    let counter: any = {}
     //本来の値を入れた辞書
-    let nativeValues = arr;
+    let nativeValues: any = arr;
 
     //最頻値とその出現回数を挿入する変数
     let maxCounter = 0;

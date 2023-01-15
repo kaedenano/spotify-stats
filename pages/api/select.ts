@@ -6,13 +6,13 @@ const prisma = new PrismaClient();
 
 export default async function handler(
   req: NextApiRequest,
-  res: NextApiResponse<User[]>,
+  res: any,
 ) {
 
   const uuid = req.body;
 
   try {
-    const users = await prisma.user.findFirst({
+    const users: any = await prisma.user.findFirst({
       where: {
         uuid: uuid,
       },
@@ -24,7 +24,8 @@ export default async function handler(
       res.status(200).json(users);
     }
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(500).end();
+    // res.status(500).send(error.message);
   }
 
 }

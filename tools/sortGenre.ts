@@ -1,4 +1,4 @@
-export const sortGenre = (artists) => {
+export const sortGenre = (artists: any) => {
 
   let arr = [];
 
@@ -13,7 +13,7 @@ export const sortGenre = (artists) => {
   const array = arr;
 
   // 出現した文字をカウントするためのオブジェクトを定義する
-  const count = {};
+  const count: any = {};
 
   // 二次元配列を検索し、出現した文字をカウントする
   for (const innerArray of array) {
@@ -32,7 +32,7 @@ export const sortGenre = (artists) => {
   return ranking;
 
   // ランキングを出力する
-  for (const [i, element] of ranking.entries()) {
-    console.log(`${i + 1}位: ${element}(${count[element]}個)`);
-  }
+  // for (const [i, element] of ranking.entries()) {
+  //   console.log(`${i + 1}位: ${element}(${count[element]}個)`);
+  // }
 }

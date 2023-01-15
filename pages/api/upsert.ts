@@ -16,7 +16,7 @@ export default async function handler(
   const topTracks = req.body.track;
   const topGenres = req.body.genre;
 
-  const users = await prisma.user.upsert({
+  const users: any = await prisma.user.upsert({
     where: {
       spid: spid
     },

@@ -10,7 +10,7 @@ import { sortGenre } from '../tools/sortGenre';
 import Layout from '../components/stats';
 import { Button } from '@chakra-ui/react';
 
-export const view = ({ user, tracks, artists }: any) => {
+export const useView = ({ user, tracks, artists }: any) => {
 
     const uid = user.id;
     const artist = artists.items;
@@ -131,7 +131,7 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 // }
 
-const formatData = (spid, artists, tracks, genres) => {
+const formatData = (spid: string, artists: any, tracks: any, genres: any) => {
 
     let data = {
         spid: spid,
@@ -144,4 +144,4 @@ const formatData = (spid, artists, tracks, genres) => {
 
 }
 
-export default view;
+export default useView;

@@ -1,4 +1,4 @@
-export const bpm = (features) => {
+export const bpm = (features: any) => {
 
     let tempo = 0;
 
