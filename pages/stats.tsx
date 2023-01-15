@@ -38,7 +38,7 @@ export const view = ({ user, tracks, artists }: any) => {
 
         const res = await axiosInstance.post('/api/upsert', spData);
         const path = res.data.uuid;
-        
+
         setIsLoading(false);
 
         router.push(`/${path}`)
@@ -71,6 +71,18 @@ export const view = ({ user, tracks, artists }: any) => {
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
     const session = await getSession(ctx);
+
+    if (!session) {
+        return {
+            props: {
+            },
+            redirect: {
+                destination: '/',
+                permanent: false,
+            },
+        };
+    }
+
     const user = await getApiData('https://api.spotify.com/v1/me/', session);
     const tracks = await getApiData('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20&offset=0', session);
     const artists = await getApiData('https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10', session);
