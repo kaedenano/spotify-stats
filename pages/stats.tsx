@@ -12,38 +12,41 @@ import { Button } from '@chakra-ui/react';
 
 export const view = ({ user, tracks, artists }: any) => {
 
-    const uid  = user.id;
+    const uid = user.id;
     const artist = artists.items;
     const track = tracks.items;
     const genre = sortGenre(artists.items);
 
     // console.log(user);
     // console.log(uid);
-    // console.log(features);
-    // console.log(key);
-    // console.log(tempo);
     // console.log(artists.items);
     // console.log(tracks.items);
 
-    const data = formatData(uid, artist, track, genre);
+    const spData = formatData(uid, artist, track, genre);
     console.log(uid);
 
-    // const [data, setData] = useState(null);
-    // const [isLoaded, setIsLoaded] = useState(false);
+    const [isLoaded, setIsLoading] = useState(false);
 
-    // const handleClick = async (uid) => {
-    //     await axios.post('http://localhost:3000/api/upsert', uid);
-    //     // setData(uid);
-    //     // setIsLoaded(true);
-    // }
+    const handleClick = async () => {
+        
+        setIsLoading(true);
 
+        const axiosInstance = axios.create({
+            headers: { 'Content-Type': 'application/json' }
+        });
+
+        const res = await axiosInstance.post('/api/upsert', spData);
+
+        setIsLoading(false);
+
+    }
 
     return (
         <>
             <Button
-                onClick={throwDB(data)}
+                onClick={handleClick}
                 background={'gray.500'}
-            >POST</Button>
+            >THROW DB</Button>
             <img src={artists.items[0].images[0].url}></img>
             <img src={artists.items[1].images[0].url}></img>
             <img src={artists.items[2].images[0].url}></img>
@@ -68,22 +71,44 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
 }
 
-const throwDB: GetServerSideProps = async (data) => {
+// const throwDB = async (data) => {
 
-    const axiosInstance = axios.create({
-        headers: { 'Content-Type': 'application/json' }
-    });
+//     const [isLoading, setIsLoading] = useState(false);
+//     setIsLoading(true);
 
-    axiosInstance.post('http://localhost:3000/api/upsert', data)
-        .then(response => {
-            console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
-            // console.log(response.data);
-        })
-        .catch(error => {
-            console.log(error);
-        });
+//     const axiosInstance = axios.create({
+//         headers: { 'Content-Type': 'application/json' }
+//     });
 
-}
+//     const res = await axiosInstance.post('http://localhost:3000/api/upsert', data)
+//         // .then(response => {
+//         //     console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
+//         //     // console.log(response.data);
+//         // })
+//         // .catch(error => {
+//         //     console.log(error);
+//         // });
+
+//     setIsLoading(false);
+
+// }
+
+// const throwDB: GetServerSideProps = async (data) => {
+
+//     const axiosInstance = axios.create({
+//         headers: { 'Content-Type': 'application/json' }
+//     });
+
+//     axiosInstance.post('http://localhost:3000/api/upsert', data)
+//         .then(response => {
+//             console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
+//             // console.log(response.data);
+//         })
+//         .catch(error => {
+//             console.log(error);
+//         });
+
+// }
 
 const formatData = (spid, artists, tracks, genres) => {
 
