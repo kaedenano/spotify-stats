@@ -15,10 +15,17 @@ export const view = ({ data }) => {
     //     // return (<DefaultErrorPage statusCode={404} />);
     // }
 
-
     return (
         <>
             <h1 color='white'>aaa</h1>
+            <img src={data.artist[0].images[0].url}/>
+            <img src={data.artist[1].images[0].url}/>
+            <img src={data.artist[2].images[0].url}/>
+            <img src={data.artist[3].images[0].url}/>
+            <img src={data.artist[4].images[0].url}/>
+            <img src={data.artist[5].images[0].url}/>
+            <img src={data.artist[6].images[0].url}/>
+            <img src={data.artist[7].images[0].url}/>
         </>
     )
 
