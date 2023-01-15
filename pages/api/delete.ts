@@ -8,7 +8,7 @@ export default async function handler(
   res: NextApiResponse<User[]>,
 ) {
 
-  const spid = req.body.uid;
+  const spid = req.body;
   const users = await prisma.user.delete({
     where: {
       spid: spid

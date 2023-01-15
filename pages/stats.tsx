@@ -88,7 +88,7 @@ const throwDB: GetServerSideProps = async (data) => {
 const formatData = (spid, artists, tracks, genres) => {
 
     let data = {
-        uid: spid,
+        spid: spid,
         artist: artists,
         track: tracks,
         genre: genres

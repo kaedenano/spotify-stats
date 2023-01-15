@@ -10,7 +10,7 @@ export default async function handler(
 ) {
 
   const uuid = uuidv4();
-  const spid = req.body.uid;
+  const spid = req.body.spid;
   const topArtists = req.body.artist;
   const topTracks = req.body.track;
   const topGenres = req.body.genre;

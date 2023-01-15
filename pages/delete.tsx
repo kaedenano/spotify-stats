@@ -17,15 +17,6 @@ export const view = ({ data }) => {
 
     return (
         <>
-            <h1 color='white'>aaa</h1>
-            <img src={data.artist[0].images[0].url}/>
-            <img src={data.artist[1].images[0].url}/>
-            <img src={data.artist[2].images[0].url}/>
-            <img src={data.artist[3].images[0].url}/>
-            <img src={data.artist[4].images[0].url}/>
-            <img src={data.artist[5].images[0].url}/>
-            <img src={data.artist[6].images[0].url}/>
-            <img src={data.artist[7].images[0].url}/>
         </>
     )
 
@@ -33,26 +24,20 @@ export const view = ({ data }) => {
 
 export async function getServerSideProps(ctx) {
 
-    const currentUrl = ctx.params.uuid;
+    const spid = '4u05oslwfcvod6vu0rhhzotxk';
 
     const axiosInstance = axios.create({
         headers: { 'Content-Type': 'text/plain' }
     });
 
-    const data = await axiosInstance.post('http://localhost:3000/api/select', currentUrl)
+    const data = await axiosInstance.post('http://localhost:3000/api/delete', spid)
         .then(response => {
             console.log(response.data);
             return response.data;
         })
         .catch(error => {
-            console.log(error);
+            console.log(ctx);
         });
-
-    if (data == 'not found')  {
-        return {
-            notFound: true
-        };
-    }
 
     return { props: { data } };
 
