@@ -1,7 +1,6 @@
 import { GetServerSideProps } from 'next';
 import React, { useEffect } from 'react';
 import axios from 'axios';
-import DefaultErrorPage from 'next/error'
 
 export const view = ({ data }) => {
 

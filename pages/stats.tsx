@@ -1,8 +1,8 @@
 import { getSession } from 'next-auth/react';
-import React, { useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router'
 
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
@@ -26,9 +26,10 @@ export const view = ({ user, tracks, artists }: any) => {
     console.log(uid);
 
     const [isLoaded, setIsLoading] = useState(false);
+    const router = useRouter();
 
     const handleClick = async () => {
-        
+
         setIsLoading(true);
 
         const axiosInstance = axios.create({
@@ -36,8 +37,11 @@ export const view = ({ user, tracks, artists }: any) => {
         });
 
         const res = await axiosInstance.post('/api/upsert', spData);
-
+        const path = res.data.uuid;
+        
         setIsLoading(false);
+
+        router.push(`/${path}`)
 
     }
 
@@ -45,8 +49,13 @@ export const view = ({ user, tracks, artists }: any) => {
         <>
             <Button
                 onClick={handleClick}
-                background={'gray.500'}
-            >THROW DB</Button>
+                fontSize='32'
+                background={'blue.400'}
+                w='96'
+                h='32'
+                m='10'
+                rounded='full'
+            >Share on Twitter</Button>
             <img src={artists.items[0].images[0].url}></img>
             <img src={artists.items[1].images[0].url}></img>
             <img src={artists.items[2].images[0].url}></img>
