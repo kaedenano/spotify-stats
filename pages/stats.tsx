@@ -98,10 +98,4 @@ const formatData = (spid, artists, tracks, genres) => {
 
 }
 
-const sharePage = () => {
-
-
-
-}
-
 export default view;
