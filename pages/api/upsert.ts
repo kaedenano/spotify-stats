@@ -9,13 +9,11 @@ export default async function handler(
   res: NextApiResponse<User[]>,
 ) {
 
-  console.log(req.body[0].spotifyid)
-
   const uuid = uuidv4();
-  const spid = req.body[0].spotifyid;
-  const topArtists = req.body[1].spotifyartists;
-  const topTracks = req.body[2].spotifytracks;
-  const topGenres = req.body[3].spotifygenres;
+  const spid = req.body.uid;
+  const topArtists = req.body.artist;
+  const topTracks = req.body.track;
+  const topGenres = req.body.genre;
 
   const users = await prisma.user.upsert({
     where: {

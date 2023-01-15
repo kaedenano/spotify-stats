@@ -3,13 +3,8 @@ import React, { useEffect } from 'react';
 import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import { useState } from 'react';
-import qs from 'qs'
 
-import { getFeatures } from '../tools/getFeatures';
 import { getApiData } from '../tools/getApiData';
-import { transKey } from '../tools/transKey';
-import { mode } from '../tools/mode';
-import { bpm } from '../tools/bpm';
 import { sortGenre } from '../tools/sortGenre';
 
 import Layout from '../components/stats';
@@ -17,11 +12,7 @@ import { Button } from '@chakra-ui/react';
 
 export const view = ({ user, tracks, artists }: any) => {
 
-    // const key = transKey(mode(features));
-    // const tempo = bpm(features);
-
-
-    const uid = user.id;
+    const uid  = user.id;
     const artist = artists.items;
     const track = tracks.items;
     const genre = sortGenre(artists.items);
@@ -31,11 +22,11 @@ export const view = ({ user, tracks, artists }: any) => {
     // console.log(features);
     // console.log(key);
     // console.log(tempo);
-    console.log(artists.items);
-    console.log(tracks.items);
+    // console.log(artists.items);
+    // console.log(tracks.items);
 
     const data = formatData(uid, artist, track, genre);
-    console.log(data)
+    console.log(uid);
 
     // const [data, setData] = useState(null);
     // const [isLoaded, setIsLoaded] = useState(false);
@@ -85,23 +76,31 @@ const throwDB: GetServerSideProps = async (data) => {
 
     axiosInstance.post('http://localhost:3000/api/upsert', data)
         .then(response => {
-            console.log(response.data);
+            console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
+            // console.log(response.data);
         })
         .catch(error => {
             console.log(error);
         });
+
 }
 
 const formatData = (spid, artists, tracks, genres) => {
 
-    let data = [
-        { spotifyid: spid },
-        { spotifyartists: artists },
-        { spotifytracks: tracks },
-        { spotifygenres: genres },
-    ]
+    let data = {
+        uid: spid,
+        artist: artists,
+        track: tracks,
+        genre: genres
+    }
 
     return data;
+
+}
+
+const sharePage = () => {
+
+
 
 }
 

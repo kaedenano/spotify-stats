@@ -33,10 +33,10 @@ datasource db {
 // }
 
 model User {
-  id     Int     @id @default(autoincrement())
-  uuid   String  @unique
-  spid   String  @unique
-  artist String? @default("[]")
-  track  String? @default("[]")
-  genre  String? @default("[]")
+  id     Int    @id @default(autoincrement())
+  uuid   String @unique
+  spid   String @unique
+  artist Json?
+  track  Json?
+  genre  Json?
 }
