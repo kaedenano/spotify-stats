@@ -7,7 +7,6 @@ import { useRouter } from 'next/router'
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
 
-import Layout from '../components/stats';
 import { Button } from '@chakra-ui/react';
 
 export const useView = ({ user, tracks, artists }: any) => {
