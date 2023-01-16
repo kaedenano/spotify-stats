@@ -52,7 +52,7 @@ export async function getServerSideProps(ctx: any) {
         headers: { 'Content-Type': 'text/plain' }
     });
 
-    const data = await axiosInstance.post('http://localhost:3000/api/select', currentUrl)
+    const data = await axiosInstance.post('/api/select', currentUrl)
         .then(response => {
             console.log(response.data);
             return response.data;
