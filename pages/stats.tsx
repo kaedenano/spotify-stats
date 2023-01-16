@@ -37,7 +37,7 @@ export const useView = ({ user, tracks, artists }: any) => {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        const res = await axiosInstance.post('/api/upsert', spData);
+        const res = await axiosInstance.post(process.env.NEXT_PUBLIC_REDIRECT_URI + '/api/upsert', spData);
         const path = res.data.uuid;
 
         setIsLoading(false);
