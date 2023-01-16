@@ -1,14 +1,18 @@
 import { getSession } from 'next-auth/react';
-import { GetServerSideProps } from 'next';
-import axios from 'axios';
 import React, { useState } from 'react';
+import { Button } from '@chakra-ui/react';
+
+import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router'
 import Head from 'next/head'
+
+import axios from 'axios';
+
+import Navbar from '../components/exnavbar'
 
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
 
-import { Button } from '@chakra-ui/react';
 
 export const useView = ({ user, tracks, artists }: any) => {
 
@@ -49,8 +53,9 @@ export const useView = ({ user, tracks, artists }: any) => {
     return (
         <>
             <Head>
-                <title>Spotify Stats</title>
+                <title>Your Spotify Stats</title>
             </Head>
+            <Navbar />
             <Button
                 onClick={handleClick}
                 fontSize='32'
@@ -67,6 +72,8 @@ export const useView = ({ user, tracks, artists }: any) => {
             <img src={artists.items[4].images[0].url}></img>
             <img src={artists.items[5].images[0].url}></img>
             <img src={artists.items[6].images[0].url}></img>
+            
+
         </>
     )
 }
