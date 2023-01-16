@@ -64,7 +64,6 @@ export const useView = ({ user, tracks, artists }: any) => {
             <img src={artists.items[4].images[0].url}></img>
             <img src={artists.items[5].images[0].url}></img>
             <img src={artists.items[6].images[0].url}></img>
-            {/* <img src={artists.items[7].images[0].url}></img> */}
         </>
     )
 }
