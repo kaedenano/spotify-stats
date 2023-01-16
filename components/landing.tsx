@@ -6,7 +6,7 @@ import { ScrollImages } from './scrollImages';
 // import { LoginButton } from './loginButton';
 
 const handleLogin = () => {
-    signIn("spotify", { callbackUrl: process.env.REDIRECT_URI! });
+    signIn("spotify", { callbackUrl: process.env.REDIRECT_URI! + '/stats' });
 }
 
 export const welcome = () => {
