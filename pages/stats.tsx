@@ -3,6 +3,7 @@ import { GetServerSideProps } from 'next';
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
@@ -47,6 +48,9 @@ export const useView = ({ user, tracks, artists }: any) => {
 
     return (
         <>
+            <Head>
+                <title>Spotify Stats</title>
+            </Head>
             <Button
                 onClick={handleClick}
                 fontSize='32'
