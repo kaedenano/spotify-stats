@@ -28,6 +28,7 @@ export const useView = ({ user, tracks, artists }: any) => {
     const [isLoaded, setIsLoading] = useState(false);
     const router = useRouter();
 
+    // post DB
     const handleClick = async () => {
 
         setIsLoading(true);
