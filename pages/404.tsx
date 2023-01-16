@@ -5,7 +5,7 @@ export const view = () => {
     return (
         <>
             <p>
-                404 not found by lynn
+                404 not found
             </p>
         </>
     )
