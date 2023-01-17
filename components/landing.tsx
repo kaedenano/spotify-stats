@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 import { ScrollImages } from './scrollImages';
 // import { LoginButton } from './loginButton';
 
-export const welcome = () => {
+export default function useWelcome()  {
     const [isLoaded, setIsLoading] = useState(false);
 
     const handleLogin = () => {
@@ -102,5 +102,3 @@ export const welcome = () => {
     )
 
 }
-
-export default welcome;
