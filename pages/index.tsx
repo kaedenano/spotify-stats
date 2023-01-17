@@ -1,21 +1,10 @@
-import { signIn } from 'next-auth/react'
+import Head from 'next/head'
+
 import Navbar from '../components/exnavbar';
 import Landing from '../components/landing';
 import Footer from '../components/footer';
-import Head from 'next/head'
-import { useEffect } from 'react';
 
-const handleLogin = () => {
-    signIn("spotify", { callbackUrl: process.env.NEXT_PUBLIC_REDIRECT_URI! });
-}
-
-export const welcome = () => {
-
-    // useEffect(() => {
-    //     fetch('/api/upsert')
-    //         .then((res) => res.json())
-    //         .then(console.log);
-    // }, []);
+export default function welcome() {
 
     return (
         <>
@@ -27,5 +16,3 @@ export const welcome = () => {
         </>
     )
 }
-
-export default welcome;

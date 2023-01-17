@@ -1,7 +1,7 @@
 import { getSession } from 'next-auth/react';
 import React, { useState } from 'react';
 import { Button } from '@chakra-ui/react';
-
+import { FaTwitter } from 'react-icons/fa'
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -10,6 +10,7 @@ import axios from 'axios';
 
 import Navbar from '../components/exnavbar'
 import Stats from '../components/stats'
+
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
 
@@ -30,9 +31,15 @@ export const useView = ({ user, tracks, artists }: any) => {
     console.log(userId);
 
     const [isLoaded, setIsLoading] = useState(false);
+
+    // const [isLoaded, setIsLoading] = useState({
+    //     throwDB: false,
+    //     load: false
+    // });
     const router = useRouter();
 
     // post DB
+
     const handleClick = async () => {
 
         setIsLoading(true);
@@ -44,7 +51,7 @@ export const useView = ({ user, tracks, artists }: any) => {
         const res = await axiosInstance.post(process.env.NEXT_PUBLIC_REDIRECT_URI + '/api/upsert', spotifyData);
         const path = res.data.uuid;
 
-        setIsLoading(false);
+        // setIsLoading(false);
 
         router.push(`/${path}`)
 
@@ -59,12 +66,14 @@ export const useView = ({ user, tracks, artists }: any) => {
             <Stats data={spotifyData} />
             <Button
                 onClick={handleClick}
+                isLoading={isLoaded}
                 fontSize='32'
-                background={'blue.400'}
                 w='96'
                 h='32'
                 m='10'
                 rounded='full'
+                colorScheme='twitter'
+                leftIcon={<FaTwitter />}
             >Share on Twitter</Button>
         </>
     )

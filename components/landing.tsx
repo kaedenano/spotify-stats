@@ -1,15 +1,22 @@
 import { signIn } from 'next-auth/react'
+
+import { useState } from 'react'
+import { FaSpotify } from 'react-icons/fa'
+
 import { Heading, Box, Button, Text, VStack, Flex, Container, Image } from '@chakra-ui/react';
 import { Center, HStack } from '@chakra-ui/layout';
 import { motion } from "framer-motion";
+
 import { ScrollImages } from './scrollImages';
 // import { LoginButton } from './loginButton';
 
-const handleLogin = () => {
-    signIn("spotify", { callbackUrl: process.env.NEXT_PUBLIC_REDIRECT_URI + '/stats' });
-}
-
 export const welcome = () => {
+    const [isLoaded, setIsLoading] = useState(false);
+
+    const handleLogin = () => {
+        setIsLoading(true);
+        signIn("spotify", { callbackUrl: process.env.NEXT_PUBLIC_REDIRECT_URI + '/stats' });
+    }
 
     return (
         <>
@@ -25,6 +32,8 @@ export const welcome = () => {
                 </Heading>
                 <Button
                     onClick={handleLogin}
+                    isLoading={isLoaded}
+                    leftIcon={<FaSpotify />}
                     fontSize="2xl"
                     padding='8'
                     margin='8'
@@ -33,7 +42,6 @@ export const welcome = () => {
                     color='white'>
                     Login on Spotify
                 </Button>
-                {/* <LoginButton/> */}
                 <p>
                     <Text
                         as='i'
