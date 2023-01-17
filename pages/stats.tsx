@@ -9,14 +9,14 @@ import Head from 'next/head'
 import axios from 'axios';
 
 import Navbar from '../components/exnavbar'
-
+import Stats from '../components/stats'
 import { getApiData } from '../tools/getApiData';
 import { sortGenre } from '../tools/sortGenre';
 
 
 export const useView = ({ user, tracks, artists }: any) => {
 
-    const uid = user.id;
+    const userId = user.id;
     const artist = artists.items;
     const track = tracks.items;
     const genre = sortGenre(artists.items);
@@ -26,8 +26,8 @@ export const useView = ({ user, tracks, artists }: any) => {
     // console.log(artists.items);
     // console.log(tracks.items);
 
-    const spData = formatData(uid, artist, track, genre);
-    console.log(uid);
+    const spotifyData = formatData(userId, artist, track, genre);
+    console.log(userId);
 
     const [isLoaded, setIsLoading] = useState(false);
     const router = useRouter();
@@ -41,7 +41,7 @@ export const useView = ({ user, tracks, artists }: any) => {
             headers: { 'Content-Type': 'application/json' }
         });
 
-        const res = await axiosInstance.post(process.env.NEXT_PUBLIC_REDIRECT_URI + '/api/upsert', spData);
+        const res = await axiosInstance.post(process.env.NEXT_PUBLIC_REDIRECT_URI + '/api/upsert', spotifyData);
         const path = res.data.uuid;
 
         setIsLoading(false);
@@ -56,6 +56,7 @@ export const useView = ({ user, tracks, artists }: any) => {
                 <title>Your Spotify Stats</title>
             </Head>
             <Navbar />
+            <Stats data={spotifyData} />
             <Button
                 onClick={handleClick}
                 fontSize='32'
@@ -65,15 +66,6 @@ export const useView = ({ user, tracks, artists }: any) => {
                 m='10'
                 rounded='full'
             >Share on Twitter</Button>
-            <img src={artists.items[0].images[0].url}></img>
-            <img src={artists.items[1].images[0].url}></img>
-            <img src={artists.items[2].images[0].url}></img>
-            <img src={artists.items[3].images[0].url}></img>
-            <img src={artists.items[4].images[0].url}></img>
-            <img src={artists.items[5].images[0].url}></img>
-            <img src={artists.items[6].images[0].url}></img>
-            
-
         </>
     )
 }
@@ -96,7 +88,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     const user = await getApiData('https://api.spotify.com/v1/me/', session);
     const tracks = await getApiData('https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=20&offset=0', session);
     const artists = await getApiData('https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=10', session);
-    // const features = await getFeatures(tracks, session);
 
     return { props: { user, tracks, artists } };
 

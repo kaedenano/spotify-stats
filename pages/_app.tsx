@@ -3,7 +3,6 @@ import { ChakraProvider } from '@chakra-ui/react'
 import { Session } from 'next-auth';
 import Head from 'next/head'
 import {theme} from '../styles/theme'
-// import '../styles/globals.css'
 
 function App({ Component, pageProps: { session, ...pageProps } }: any){
   return (

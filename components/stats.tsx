@@ -1,23 +1,7 @@
 import { Button, Container, SimpleGrid, Text, Image } from '@chakra-ui/react'
-export default function stats(data: any) {
+export default function stats({ data }: any) {
     return (
         <>
-            <Button
-                onClick={handleClick}
-                fontSize='32'
-                background={'blue.400'}
-                w='96'
-                h='32'
-                m='10'
-                rounded='full'
-            >Share on Twitter</Button>
-            <img src={artists.items[0].images[0].url}></img>
-            <img src={artists.items[1].images[0].url}></img>
-            <img src={artists.items[2].images[0].url}></img>
-            <img src={artists.items[3].images[0].url}></img>
-            <img src={artists.items[4].images[0].url}></img>
-            <img src={artists.items[5].images[0].url}></img>
-            <img src={artists.items[6].images[0].url}></img>
 
             <Container
                 my='20'
