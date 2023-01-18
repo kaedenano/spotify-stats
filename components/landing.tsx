@@ -8,9 +8,8 @@ import { Center, HStack } from '@chakra-ui/layout';
 import { motion } from "framer-motion";
 
 import { ScrollImages } from './scrollImages';
-// import { LoginButton } from './loginButton';
 
-export default function useWelcome()  {
+export const useWelcome = () =>  {
     const [isLoaded, setIsLoading] = useState(false);
 
     const handleLogin = () => {
@@ -102,3 +101,5 @@ export default function useWelcome()  {
     )
 
 }
+
+export default useWelcome;

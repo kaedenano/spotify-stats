@@ -1,4 +1,5 @@
 import { Flex, Box, TableContainer, Table, Button, Container, SimpleGrid, Text, Image } from '@chakra-ui/react'
+
 export default function stats({ data }: any) {
     return (
         <>
