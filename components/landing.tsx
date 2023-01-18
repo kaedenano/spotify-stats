@@ -10,10 +10,8 @@ import { motion } from "framer-motion";
 import { ScrollImages } from './scrollImages';
 
 export const useWelcome = () =>  {
-    const [isLoaded, setIsLoading] = useState(false);
 
     const handleLogin = () => {
-        setIsLoading(true);
         signIn("spotify", { callbackUrl: process.env.NEXT_PUBLIC_REDIRECT_URI + '/stats' });
     }
 
@@ -31,7 +29,6 @@ export const useWelcome = () =>  {
                 </Heading>
                 <Button
                     onClick={handleLogin}
-                    isLoading={isLoaded}
                     leftIcon={<FaSpotify />}
                     fontSize="2xl"
                     padding='8'

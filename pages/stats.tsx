@@ -1,6 +1,6 @@
 import { getSession } from 'next-auth/react';
 import React, { useState } from 'react';
-import { Button } from '@chakra-ui/react';
+import { Flex, Button, Container } from '@chakra-ui/react';
 import { FaTwitter } from 'react-icons/fa'
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router'
@@ -53,7 +53,7 @@ export const useView = ({ user, tracks, artists }: any) => {
 
         // setIsLoading(false);
 
-        router.push(`/${path}`)
+        router.push( 'https://twitter.com/intent/tweet?text='  + process.env.NEXT_PUBLIC_REDIRECT_URI +  `/${path}`)
 
     }
 
@@ -64,17 +64,21 @@ export const useView = ({ user, tracks, artists }: any) => {
             </Head>
             <Navbar />
             <Stats data={spotifyData} />
+            
+            
+            <Flex h={200} justify='center' align='center'>
             <Button
                 onClick={handleClick}
                 isLoading={isLoaded}
-                fontSize='32'
-                w='96'
+                fontSize='24'
+                w='64'
                 h='32'
                 m='10'
                 rounded='full'
                 colorScheme='twitter'
                 leftIcon={<FaTwitter />}
             >Share on Twitter</Button>
+            </Flex>
         </>
     )
 }
