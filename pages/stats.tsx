@@ -32,10 +32,6 @@ export const useView = ({ user, tracks, artists }: any) => {
 
     const [isLoaded, setIsLoading] = useState(false);
 
-    // const [isLoaded, setIsLoading] = useState({
-    //     throwDB: false,
-    //     load: false
-    // });
     const router = useRouter();
 
     // post DB
@@ -53,7 +49,7 @@ export const useView = ({ user, tracks, artists }: any) => {
 
         // setIsLoading(false);
 
-        router.push( 'https://twitter.com/intent/tweet?text='  + process.env.NEXT_PUBLIC_REDIRECT_URI +  `/${path}`)
+        router.push('https://twitter.com/intent/tweet?text=' + process.env.NEXT_PUBLIC_REDIRECT_URI + `/${path}`)
 
     }
 
@@ -64,20 +60,17 @@ export const useView = ({ user, tracks, artists }: any) => {
             </Head>
             <Navbar />
             <Stats data={spotifyData} />
-            
-            
             <Flex h={200} justify='center' align='center'>
-            <Button
-                onClick={handleClick}
-                isLoading={isLoaded}
-                fontSize='24'
-                w='64'
-                h='32'
-                m='10'
-                rounded='full'
-                colorScheme='twitter'
-                leftIcon={<FaTwitter />}
-            >Share on Twitter</Button>
+                <Button
+                    onClick={handleClick}
+                    isLoading={isLoaded}
+                    w='72'
+                    h='32'
+                    m='10'
+                    rounded='full'
+                    colorScheme='twitter'
+                    leftIcon={<FaTwitter />}
+                >Share on Twitter</Button>
             </Flex>
         </>
     )
@@ -105,45 +98,6 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     return { props: { user, tracks, artists } };
 
 }
-
-// const throwDB = async (data) => {
-
-//     const [isLoading, setIsLoading] = useState(false);
-//     setIsLoading(true);
-
-//     const axiosInstance = axios.create({
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-
-//     const res = await axiosInstance.post('http://localhost:3000/api/upsert', data)
-//         // .then(response => {
-//         //     console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
-//         //     // console.log(response.data);
-//         // })
-//         // .catch(error => {
-//         //     console.log(error);
-//         // });
-
-//     setIsLoading(false);
-
-// }
-
-// const throwDB: GetServerSideProps = async (data) => {
-
-//     const axiosInstance = axios.create({
-//         headers: { 'Content-Type': 'application/json' }
-//     });
-
-//     axiosInstance.post('http://localhost:3000/api/upsert', data)
-//         .then(response => {
-//             console.log('ressssssssssssssssssssssssssssssssssssssssssssss');
-//             // console.log(response.data);
-//         })
-//         .catch(error => {
-//             console.log(error);
-//         });
-
-// }
 
 const formatData = (spid: string, artists: any, tracks: any, genres: any) => {
 
