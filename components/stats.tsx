@@ -23,7 +23,7 @@ export default function stats({ data }: any) {
                             as='b'
                             fontSize={32}
                             mr='2'
-                        >aoi's profile</Text>
+                        >aoi</Text>
 
                     </HStack>
                 </Box>
@@ -43,7 +43,6 @@ export default function stats({ data }: any) {
                             <Image
                                 rounded='2xl'
                                 src={data?.artist[0]?.images[0]?.url}
-                                href={data?.artist[0]?.external_urls?.spotify}
                                 fallbackSrc="https://via.placeholder.com/100?text=fallbackSrc" />
                         </Link>
                             <Text as='b'>{data?.artist[0]?.name}</Text>
@@ -51,7 +50,6 @@ export default function stats({ data }: any) {
                             <Image
                                 rounded='2xl'
                                 src={data?.artist[1]?.images[0]?.url}
-                                href={data?.artist[1]?.external_urls?.spotify}
                                 fallbackSrc="https://via.placeholder.com/100?text=fallbackSrc" />
                         </Link>
                             <Text as='b'>{data?.artist[1]?.name}</Text>
