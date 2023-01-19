@@ -7,7 +7,10 @@ import {
     SimpleGrid,
     Text,
     Image,
+    Flex,
+    Button
 } from '@chakra-ui/react'
+import { FaTwitter } from 'react-icons/fa'
 import Link from 'next/link'
 
 export default function stats({ data }: any) {
@@ -117,7 +120,7 @@ export default function stats({ data }: any) {
                 <SimpleGrid
                     columns={3}
                     spacing={3}
-                    my='20'>
+                    mt='20'>
                     <Image rounded='2xl' src={data?.track[3]?.album?.images[0]?.url} />
                     <Image rounded='2xl' src={data?.track[4]?.album?.images[0]?.url} />
                     <Image rounded='2xl' src={data?.track[5]?.album?.images[0]?.url} />
@@ -126,7 +129,26 @@ export default function stats({ data }: any) {
                     <Image rounded='2xl' src={data?.track[8]?.album?.images[0]?.url} />
                 </SimpleGrid>
 
+                <Box py='10'></Box>
+
+
+
             </Container>
+                <Flex bottom={20} position="sticky" justify='center' align='center'>
+                    <Button
+                        // onClick={handleClick}
+                        shadow='2xl'
+                        // isLoading={isLoaded}
+                        w='72'
+                        h='20'
+                        // m='10'
+                        rounded='full'
+                        colorScheme='twitter'
+                        leftIcon={<FaTwitter />}
+                    >Share on Twitter</Button>
+                </Flex>
+
+
         </>
     )
 }

@@ -60,9 +60,10 @@ export const useView = ({ user, tracks, artists }: any) => {
             </Head>
             <Navbar />
             <Stats data={spotifyData} />
-            <Flex h={200} justify='center' align='center'>
+            {/* <Flex h={200} justify='center' align='center'>
                 <Button
                     onClick={handleClick}
+                    position='sticky'
                     shadow='2xl'
                     isLoading={isLoaded}
                     w='72'
@@ -72,7 +73,7 @@ export const useView = ({ user, tracks, artists }: any) => {
                     colorScheme='twitter'
                     leftIcon={<FaTwitter />}
                 >Share on Twitter</Button>
-            </Flex>
+            </Flex> */}
         </>
     )
 }
