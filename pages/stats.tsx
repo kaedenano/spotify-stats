@@ -10,6 +10,7 @@ import axios from 'axios'
 
 import Navbar from '../components/navbar'
 import Stats from '../components/stats'
+import Footer from '../components/footer'
 
 import { getApiData } from '../tools/getApiData'
 import { sortGenre } from '../tools/sortGenre'
@@ -22,7 +23,7 @@ export const useView = ({ user, tracks, artists }: any) => {
     const track = tracks.items;
     const genre = sortGenre(artists.items);
 
-    // console.log(user);
+    console.log(user);
     // console.log(uid);
     // console.log(artists.items);
     // console.log(tracks.items);
@@ -73,20 +74,7 @@ export const useView = ({ user, tracks, artists }: any) => {
                         leftIcon={<FaTwitter />}
                     >Share on Twitter</Button>
                 </Flex>
-            {/* <Flex h={200} justify='center' align='center'>
-                <Button
-                    onClick={handleClick}
-                    position='sticky'
-                    shadow='2xl'
-                    isLoading={isLoaded}
-                    w='72'
-                    h='20'
-                    m='10'
-                    rounded='full'
-                    colorScheme='twitter'
-                    leftIcon={<FaTwitter />}
-                >Share on Twitter</Button>
-            </Flex> */}
+
         </>
     )
 }

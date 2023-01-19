@@ -132,20 +132,6 @@ export default function stats({ data }: any) {
                 <Box py='10'></Box>
             
             </Container>
-                {/* <Flex bottom={10} position="sticky" justify='center' align='center'>
-                    <Button
-                        // onClick={handleClick}
-                        shadow='xs'
-                        fontSize='2xl'
-                        // isLoading={isLoaded}
-                        w='72'
-                        h='20'
-                        // m='10'
-                        rounded='full'
-                        colorScheme='twitter'
-                        leftIcon={<FaTwitter />}
-                    >Share on Twitter</Button>
-                </Flex> */}
         </>
     )
 }

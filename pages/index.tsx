@@ -13,6 +13,7 @@ export default function welcome() {
             </Head>
             <Navbar />
             <Landing />
+            <Footer />
         </>
     )
 }
