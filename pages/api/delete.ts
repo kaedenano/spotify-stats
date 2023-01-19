@@ -10,12 +10,16 @@ export default async function handler(
 ) {
 
   const spid = req.body;
-  const users: any = await prisma.user.delete({
-    where: {
-      spid: spid
-    }
-  });
+  try {
+    const user: any = await prisma.user.delete({
+      where: {
+        spid: spid
+      }
+    });
+    res.status(200).json(user);
+  } catch (error) {
+    res.status(500).end();
+  }
 
-  res.status(200).json(users);
 
 }

@@ -73,13 +73,11 @@ export const useWelcome = () => {
                 mx={5}
                 my={32}
             >
-                <p>
-                    <Text
-                        color={'gray.500'}
-                    >You can easily share via Twitter. <br />
-                        If you wish to remove data from the site, you can access the delete page from the navigation bar.
-                    </Text>
-                </p>
+                <Text
+                    color={'gray.500'}
+                >You can easily share via Twitter. <br />
+                    If you wish to remove data from the site, you can access the delete page from the navigation bar.
+                </Text>
             </Box>
         </>
 
