@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 import { ScrollImages } from './scrollImages';
 
-export const useWelcome = () =>  {
+export const useWelcome = () => {
 
     const handleLogin = () => {
         signIn("spotify", { callbackUrl: process.env.NEXT_PUBLIC_REDIRECT_URI + '/stats' });
@@ -43,7 +43,7 @@ export const useWelcome = () =>  {
                         as='i'
                         color={'gray.400'}
                         mx='10'>
-                        Get statistics about your top artists, songs, and genres from Spotify. Updated daily. Easy to share.
+                        Share your most played tracks and artists.
                     </Text>
                 </p>
             </Box>

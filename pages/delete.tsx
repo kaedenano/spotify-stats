@@ -8,10 +8,11 @@ import DefaultErrorPage from 'next/error'
 
 import { Container, Box, Button, Text} from '@chakra-ui/react'
 
-export const useView = ({ spotifyId }: any) => {
+export const useView = (ctx: any) => {
 
     const [isLoading, setIsLoading] = useState(false);
-    const spid = spotifyId;
+    console.log(ctx)
+    const spid = 'aaa';
 
     const handleClick = async () => {
 
@@ -49,6 +50,14 @@ export const useView = ({ spotifyId }: any) => {
             </Container>
         </>
     )
+}
+
+
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
+    console.log(ctx.req);
+    return { props: {} };
+
 }
 
 export default useView;
