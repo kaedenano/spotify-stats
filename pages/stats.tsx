@@ -1,18 +1,18 @@
-import { getSession } from 'next-auth/react';
-import React, { useState } from 'react';
-import { Flex, Button, Container } from '@chakra-ui/react';
+import { getSession } from 'next-auth/react'
+import React, { useState } from 'react'
+import { Flex, Button, Container } from '@chakra-ui/react'
 import { FaTwitter } from 'react-icons/fa'
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps } from 'next'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 
-import axios from 'axios';
+import axios from 'axios'
 
-import Navbar from '../components/exnavbar'
+import Navbar from '../components/navbar'
 import Stats from '../components/stats'
 
-import { getApiData } from '../tools/getApiData';
-import { sortGenre } from '../tools/sortGenre';
+import { getApiData } from '../tools/getApiData'
+import { sortGenre } from '../tools/sortGenre'
 
 
 export const useView = ({ user, tracks, artists }: any) => {
@@ -63,9 +63,10 @@ export const useView = ({ user, tracks, artists }: any) => {
             <Flex h={200} justify='center' align='center'>
                 <Button
                     onClick={handleClick}
+                    shadow='2xl'
                     isLoading={isLoaded}
                     w='72'
-                    h='32'
+                    h='20'
                     m='10'
                     rounded='full'
                     colorScheme='twitter'

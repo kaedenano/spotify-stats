@@ -1,8 +1,9 @@
 import { GetServerSideProps } from 'next';
 import React, { useEffect } from 'react';
+import Head from 'next/head'
 import axios from 'axios';
-import Navbar from '../components/exnavbar';
-import Stats  from '../components/stats';
+import Navbar from '../components/navbar';
+import Stats from '../components/stats';
 import { Container, Box, Grid, GridItem, SimpleGrid, Text, Image } from '@chakra-ui/react'
 
 export const view = ({ data }: any) => {
@@ -11,6 +12,7 @@ export const view = ({ data }: any) => {
 
     return (
         <>
+            <Head><title>Spotify Stats</title></Head>
             <Navbar />
             <Stats data={data} />
         </>

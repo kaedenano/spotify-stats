@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import Navbar from '../components/exnavbar';
+import Navbar from '../components/navbar';
 import Landing from '../components/landing';
 import Footer from '../components/footer';
 
