@@ -132,7 +132,7 @@ export default function stats({ data }: any) {
                 <Box py='10'></Box>
             
             </Container>
-                <Flex bottom={{lg: '20', sm: '10'}} position="sticky" justify='center' align='center'>
+                <Flex bottom={{md: '20', sm: '10'}} position="sticky" justify='center' align='center'>
                     <Button
                         // onClick={handleClick}
                         shadow='xs'
