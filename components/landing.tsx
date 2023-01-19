@@ -75,7 +75,6 @@ export const useWelcome = () => {
             >
                 <p>
                     <Text
-                        as='basic'
                         color={'gray.500'}
                     >You can easily share via Twitter. <br />
                         If you wish to remove data from the site, you can access the delete page from the navigation bar.
