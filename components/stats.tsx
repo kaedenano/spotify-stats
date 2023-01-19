@@ -132,7 +132,7 @@ export default function stats({ data }: any) {
                 <Box py='10'></Box>
             
             </Container>
-                <Flex bottom={10} position="sticky" justify='center' align='center'>
+                {/* <Flex bottom={10} position="sticky" justify='center' align='center'>
                     <Button
                         // onClick={handleClick}
                         shadow='xs'
@@ -145,7 +145,7 @@ export default function stats({ data }: any) {
                         colorScheme='twitter'
                         leftIcon={<FaTwitter />}
                     >Share on Twitter</Button>
-                </Flex>
+                </Flex> */}
         </>
     )
 }
