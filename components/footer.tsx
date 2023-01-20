@@ -44,22 +44,22 @@ const SocialButton = ({
 
 export default function SmallCentered() {
   return (
-    <Box as='footer' bottom={0}>
-        <Container
-          as={Stack}
-          py={4}
-          direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify={{ base: 'center', md: 'space-between' }}
-          align={{ base: 'center', md: 'center' }}
-          >
-          <Text color='gray.400'>© 2023 Spotify Stats</Text>
-          <Stack direction={'row'} spacing={6}>
-            <SocialButton label={'Twitter'} href={'https://twitter.com/aoirxs'}>
-              <FaTwitter />
-            </SocialButton>
-          </Stack>
-        </Container>
-    </Box>
+    <chakra.footer>
+      <Container
+        as={Stack}
+        py={4}
+        direction={{ base: 'column', md: 'row' }}
+        spacing={4}
+        justify={{ base: 'center', md: 'space-between' }}
+        align={{ base: 'center', md: 'center' }}
+      >
+        <Text color='gray.400'>© 2023 Spotify Stats</Text>
+        <Stack direction={'row'} spacing={6}>
+          <SocialButton label={'Twitter'} href={'https://twitter.com/aoirxs'}>
+            <FaTwitter />
+          </SocialButton>
+        </Stack>
+      </Container>
+    </chakra.footer>
   );
 }

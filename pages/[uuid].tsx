@@ -1,11 +1,13 @@
 import { GetServerSideProps } from 'next';
 import React, { useEffect } from 'react';
 import Head from 'next/head'
+import Link from 'next/link'
 import axios from 'axios';
+
 import Navbar from '../components/navbar';
 import Footer from '../components/footer';
 import Stats from '../components/stats';
-import { Container, Box, Grid, GridItem, SimpleGrid, Text, Image } from '@chakra-ui/react'
+import { Button, Flex, Container, Box, Grid, GridItem, SimpleGrid, Text, Image } from '@chakra-ui/react'
 
 export const view = ({ data }: any) => {
 
@@ -16,6 +18,18 @@ export const view = ({ data }: any) => {
             <Head><title>Spotify Stats</title></Head>
             <Navbar />
             <Stats data={data} />
+            <Flex bottom={10} position="sticky" justify='center' align='center'>
+                <Link href='/'>
+                    <Button
+                        fontSize='2xl'
+                        w='72'
+                        h='20'
+                        rounded='full'
+                        shadow='lg'
+                        bg='brand.100'
+                    >Back to Top</Button>
+                </Link>
+            </Flex>
             <Footer />
         </>
     )

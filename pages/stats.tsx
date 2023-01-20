@@ -64,7 +64,7 @@ export const useView = ({ user, tracks, artists }: any) => {
                 <Flex bottom={10} position="sticky" justify='center' align='center'>
                     <Button
                         onClick={handleClick}
-                        shadow='xs'
+                        shadow='lg'
                         fontSize='2xl'
                         isLoading={isLoaded}
                         w='72'
@@ -74,6 +74,7 @@ export const useView = ({ user, tracks, artists }: any) => {
                         leftIcon={<FaTwitter />}
                     >Share on Twitter</Button>
                 </Flex>
+            <Footer />
 
         </>
     )
