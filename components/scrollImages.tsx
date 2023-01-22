@@ -1,3 +1,9 @@
+//
+//
+// Copied from https://hanzochang.com/articles/12
+//
+//
+
 import { Box, Flex } from '@chakra-ui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
@@ -31,7 +37,7 @@ const Component: React.FC<Props> = ({ images }) => {
       // 全体の長さから何個分　足りていないのか
       const fillableNumberOfContents: number = Math.floor(
         (ref.current.offsetWidth - imageBlocks.length * itemWidthWithGap) /
-          numberOfContents
+        numberOfContents
       )
 
       // シーケンスを追加するのは何個か
@@ -61,9 +67,6 @@ const Component: React.FC<Props> = ({ images }) => {
       >
         <AnimatePresence onExitComplete={() => console.log('aaa')}>
           <motion.div
-
-
-
             // アニメーションの変化終了時点の最終移動差分
             animate={{
               x: itemWidthWithGap,

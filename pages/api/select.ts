@@ -18,14 +18,12 @@ export default async function handler(
       },
     });
     if (!users) {
-      // res.status(404).json('not found');
       res.status(200).json('not found');
     } else {
       res.status(200).json(users);
     }
   } catch (error) {
     res.status(500).end();
-    // res.status(500).send(error.message);
   }
 
 }

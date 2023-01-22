@@ -56,6 +56,7 @@ export const useView = ({ res }: any) => {
 
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+
     const res = await getSession(ctx);
     console.log(res);
     return { props: { res } };

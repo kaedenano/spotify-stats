@@ -116,23 +116,23 @@ export default function stats({ data }: any) {
                             src={data?.track[0]?.album?.images[0]?.url}
                             fallbackSrc="https://via.placeholder.com/100?text=fallbackSrc" />
                     </Link>
-                        <Text as='b'>{data?.track[0]?.name}</Text>
-                        <Spacer />
+                    <Text as='b'>{data?.track[0]?.name}</Text>
+                    <Spacer />
                     <Link href={data?.track[1]?.external_urls?.spotify}>
                         <Image
                             rounded='2xl'
                             src={data?.track[1]?.album?.images[0]?.url}
                             fallbackSrc="https://via.placeholder.com/100?text=fallbackSrc" />
                     </Link>
-                        <Text as='b'>{data?.track[1]?.name}</Text>
-                        <Spacer />
+                    <Text as='b'>{data?.track[1]?.name}</Text>
+                    <Spacer />
                     <Link href={data?.track[2]?.external_urls?.spotify}>
                         <Image
                             rounded='2xl'
                             src={data?.track[2]?.album?.images[0]?.url}
                             fallbackSrc="https://via.placeholder.com/100?text=fallbackSrc" />
                     </Link>
-                        <Text as='b'>{data?.track[2]?.name}</Text>
+                    <Text as='b'>{data?.track[2]?.name}</Text>
                 </VStack>
 
                 <SimpleGrid

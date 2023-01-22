@@ -1,12 +1,16 @@
-import Link from 'next/link';
-import { v4 as uuidv4 } from 'uuid';
+import { Container, Flex} from '@chakra-ui/react'
+import Navbar from '../components/navbar'
+import Footer from '../components/footer'
 
 export const view = () => {
     return (
         <>
-            <p>
+        <Navbar />
+            <Flex justify='center' align='center'>
                 404 not found
-            </p>
+            </Flex>
+
+        <Footer />
         </>
     )
 }

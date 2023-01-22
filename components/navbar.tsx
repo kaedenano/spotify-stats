@@ -1,3 +1,9 @@
+//
+//
+// Copied from https://chakra-templates.dev/navigation/navbar
+//
+//
+
 import {
   Container,
   Box,
@@ -48,7 +54,7 @@ export default function WithSubnavigation() {
           />
         </Flex>
 
-        {/* back to top page */}
+        {/* back to top */}
         <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
           <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
             <DesktopNav />
@@ -72,44 +78,44 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('black', 'gray.800');
 
   return (
-      <Stack direction={'row'} spacing={4}>
-        {NAV_ITEMS.map((navItem) => (
-          <Box key={navItem.label}>
-            <Popover trigger={'hover'} placement={'bottom-start'}>
-              <PopoverTrigger>
-                <Link
-                  p={2}
-                  href={navItem.href ?? '#'}
-                  fontSize={'sm'}
-                  fontWeight={500}
-                  color={linkColor}
-                  _hover={{
-                    textDecoration: 'none',
-                    color: linkHoverColor,
-                  }}>
-                  {navItem.label}
-                </Link>
-              </PopoverTrigger>
+    <Stack direction={'row'} spacing={4}>
+      {NAV_ITEMS.map((navItem) => (
+        <Box key={navItem.label}>
+          <Popover trigger={'hover'} placement={'bottom-start'}>
+            <PopoverTrigger>
+              <Link
+                p={2}
+                href={navItem.href ?? '#'}
+                fontSize={'sm'}
+                fontWeight={500}
+                color={linkColor}
+                _hover={{
+                  textDecoration: 'none',
+                  color: linkHoverColor,
+                }}>
+                {navItem.label}
+              </Link>
+            </PopoverTrigger>
 
-              {navItem.children && (
-                <PopoverContent
-                  border={0}
-                  boxShadow={'xl'}
-                  bg={popoverContentBgColor}
-                  p={4}
-                  rounded={'xl'}
-                  minW={'sm'}>
-                  <Stack>
-                    {navItem.children.map((child) => (
-                      <DesktopSubNav key={child.label} {...child} />
-                    ))}
-                  </Stack>
-                </PopoverContent>
-              )}
-            </Popover>
-          </Box>
-        ))}
-      </Stack>
+            {navItem.children && (
+              <PopoverContent
+                border={0}
+                boxShadow={'xl'}
+                bg={popoverContentBgColor}
+                p={4}
+                rounded={'xl'}
+                minW={'sm'}>
+                <Stack>
+                  {navItem.children.map((child) => (
+                    <DesktopSubNav key={child.label} {...child} />
+                  ))}
+                </Stack>
+              </PopoverContent>
+            )}
+          </Popover>
+        </Box>
+      ))}
+    </Stack>
   );
 };
 

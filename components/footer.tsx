@@ -1,3 +1,9 @@
+//
+//
+// Copied from https://chakra-templates.dev/page-sections/footer
+//
+//
+
 import {
   Box,
   chakra,
