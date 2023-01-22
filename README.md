@@ -3,6 +3,9 @@
 
 Spotify Stats is a website that displays and shares Spotify statistics.
 
+## Actual shared pages
+https://spstats.me/c0f7e9c1-ccf8-439d-9bc3-a8f9e800b361
+
 ## Technology Stacks
 - TypeScript
 - Next.js
@@ -12,7 +15,7 @@ Spotify Stats is a website that displays and shares Spotify statistics.
 - Chakra UI
 - Framer Motion
 - Spotify Web API
-- Vercel(Hosting)
+- Vercel (Hosting)
 
 ## Features
 - Displays the most listened to artists and songs of logged in users
@@ -36,7 +39,7 @@ yarn
 npm install
 ```
 
-Setting Environment Variables
+Setting Environment Variables (.env.local)
 ``` bash
 SPOTIFY_CLIENT_ID=xxx
 SPOTIFY_CLIENT_SECRET=xxx
@@ -53,4 +56,12 @@ yarn dev
 npm run dev
 ```
 
+## Result Page
+
+![Result](./images//result.png)
+
+## Reference
+[Spotify for Developers](https://developer.spotify.com/documentation/web-api/)
+
+[PlanetScale quickstart guide](https://planetscale.com/docs/tutorials/planetscale-quick-start-guide)
 
