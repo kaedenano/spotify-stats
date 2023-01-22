@@ -56,6 +56,9 @@ yarn dev
 npm run dev
 ```
 
+## Warning
+Much of this project is incomplete and has not yet applied for an API, so other users cannot use it yet.
+
 ## Result Page
 
 ![Result](./images//result.png)
