@@ -6,6 +6,11 @@ Spotify Stats is a website that displays and shares Spotify statistics.
 ## Actual shared pages
 https://spstats.me/c0f7e9c1-ccf8-439d-9bc3-a8f9e800b361
 
+## Features
+- Displays the most listened to artists and songs of logged in users
+- Share the page with artists and tracks displayed
+- Seamless sharing via Twitter
+
 ## Technology Stacks
 - TypeScript
 - Next.js
@@ -16,11 +21,6 @@ https://spstats.me/c0f7e9c1-ccf8-439d-9bc3-a8f9e800b361
 - Framer Motion
 - Spotify Web API
 - Vercel (Hosting)
-
-## Features
-- Displays the most listened to artists and songs of logged in users
-- Share the page with artists and tracks displayed
-- Seamless sharing via Twitter
 
 ## Require
 - You must register your [Spotify application](https://developer.spotify.com/dashboard/) first
