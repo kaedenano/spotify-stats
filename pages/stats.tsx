@@ -23,19 +23,14 @@ export const useView = ({ user, tracks, artists }: any) => {
     const track = tracks.items;
     const genre = sortGenre(artists.items);
 
-    console.log(user);
-    // console.log(uid);
-    // console.log(artists.items);
-    // console.log(tracks.items);
-
     const spotifyData = formatData(userId, artist, track, genre);
     console.log(userId);
 
-    const [isLoaded, setIsLoading] = useState(false);
-
-    const router = useRouter();
 
     // post DB
+    
+    const [isLoaded, setIsLoading] = useState(false);
+    const router = useRouter();
 
     const handleClick = async () => {
 

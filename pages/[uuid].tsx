@@ -11,8 +11,6 @@ import { Button, Flex, Container, Box, Grid, GridItem, SimpleGrid, Text, Image }
 
 export const view = ({ data }: any) => {
 
-    console.log(data);
-
     return (
         <>
             <Head><title>Spotify Stats</title></Head>
