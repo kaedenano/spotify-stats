@@ -33,9 +33,7 @@ Dependency Installation
 
 ``` bash
 yarn
-
 # or
-
 npm install
 ```
 
@@ -50,20 +48,19 @@ NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000
 Start the server
 ``` bash
 yarn dev
-
 # or
-
 npm run dev
 ```
 
 ## Warning
 Much of this project is incomplete and has not yet applied for an API, so other users cannot use it yet.
 
-## Result Page
+## Screenshot
 
 ![Result](./images//result.png)
 
 ## Reference
+
 [Spotify for Developers](https://developer.spotify.com/documentation/web-api/)
 
 [PlanetScale quickstart guide](https://planetscale.com/docs/tutorials/planetscale-quick-start-guide)
