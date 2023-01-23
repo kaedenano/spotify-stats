@@ -23,9 +23,9 @@ https://spstats.me/c0f7e9c1-ccf8-439d-9bc3-a8f9e800b361
 - Seamless sharing via Twitter
 
 ## Require
-You need to register your [application](https://developer.spotify.com/dashboard/) first
+- You must register your [Spotify application](https://developer.spotify.com/dashboard/) first
 
-If you want to use the database, you need to register with [PlanetScale](https://planetscale.com/)
+- If you want to use the database, you need to register with [PlanetScale](https://planetscale.com/)
 
 ## Run
 Clone
@@ -63,7 +63,7 @@ npm run dev
 ```
 
 ## Warning
-Much of this project is incomplete and has not yet applied for an API, so other users cannot use it yet.
+Much of this project is incomplete and has not yet applied for an API, so it is not available to other users.
 
 ## Screenshot
 
