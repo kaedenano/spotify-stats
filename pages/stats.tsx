@@ -28,7 +28,7 @@ export const useView = ({ user, tracks, artists }: any) => {
 
 
     // post DB
-    
+
     const [isLoaded, setIsLoading] = useState(false);
     const router = useRouter();
 
