@@ -22,6 +22,11 @@ https://spstats.me/c0f7e9c1-ccf8-439d-9bc3-a8f9e800b361
 - Share the page with artists and tracks displayed
 - Seamless sharing via Twitter
 
+## Require
+You need to register your [application](https://developer.spotify.com/dashboard/) first
+
+If you want to use the database, you need to register with [PlanetScale](https://planetscale.com/)
+
 ## Run
 Clone
 ``` bash
@@ -44,6 +49,11 @@ SPOTIFY_CLIENT_SECRET=xxx
 NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000
 ```
 
+Database environment variables (.env)
+``` bash
+DATABASE_URL='mysql:xxx'
+```
+
 
 Start the server
 ``` bash
@@ -59,9 +69,8 @@ Much of this project is incomplete and has not yet applied for an API, so other 
 
 ![Result](./images//result.png)
 
-## Reference
+## References
 
 [Spotify for Developers](https://developer.spotify.com/documentation/web-api/)
 
 [PlanetScale quickstart guide](https://planetscale.com/docs/tutorials/planetscale-quick-start-guide)
-
