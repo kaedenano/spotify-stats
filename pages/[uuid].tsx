@@ -44,11 +44,11 @@ export async function getServerSideProps(ctx: any) {
 
     const data = await axiosInstance.post(process.env.NEXT_PUBLIC_REDIRECT_URI + '/api/select', currentUrl)
         .then(res => {
-            console.log(res.data);
+            // console.log(res.data);
             return res.data;
         })
         .catch(error => {
-            console.log(error);
+            // console.log(error);
             return 'not found'
         });
 
