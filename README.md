@@ -8,7 +8,7 @@ https://spstats.me/d3161c09-0e7a-41e4-ba84-26f5897e32df
 
 ## Features
 - Displays the most listened to artists and songs of logged in users
-- Share the page with artists and tracks displayed
+- Personalized pages can be generated and shared
 - Seamless sharing via Twitter
 
 ## Technology Stacks
