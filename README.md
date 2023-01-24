@@ -44,9 +44,9 @@ npm install
 
 Setting Environment Variables (.env.local)
 ``` bash
-SPOTIFY_CLIENT_ID=xxx
-SPOTIFY_CLIENT_SECRET=xxx
-NEXT_PUBLIC_REDIRECT_URI=http://localhost:3000
+SPOTIFY_CLIENT_ID='YOUR_CLIENT_ID'
+SPOTIFY_CLIENT_SECRET='YOUR_CLIENT_SECRET'
+NEXT_PUBLIC_REDIRECT_URI='http://localhost:3000'
 ```
 
 Database environment variables (.env)
