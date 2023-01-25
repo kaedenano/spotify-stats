@@ -4,7 +4,7 @@
 Spotify Stats is a website that displays and shares Spotify statistics.
 
 ## Actual shared pages
-https://spstats.me/d3161c09-0e7a-41e4-ba84-26f5897e32df
+https://spstats.me/6245c81f-5dbf-4a45-baa5-74d8d202c401 
 
 ## Features
 - Displays the most listened to artists and songs of logged in users
