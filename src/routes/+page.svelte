@@ -1,7 +1,9 @@
 <script>
     import { signIn, signOut } from "@auth/sveltekit/client";
     import { page } from "$app/stores";
-    console.log($page.data.session);
+
+    const session = $page.data.session;
+    console.log(session);
 </script>
 
 <h1>SvelteKit Auth Example</h1>
