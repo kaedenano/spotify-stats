@@ -16,7 +16,7 @@ export const handle = async ({ event, resolve }) => {
             SpotifyProvider({
                 clientId: SPOTIFY_ID,
                 clientSecret: SPOTIFY_SECRET,
-                authorization: { params: { scope } },
+                authorization: { params: { scope: scope } },
             })],
         session: { strategy: 'jwt' },
         callbacks: {
